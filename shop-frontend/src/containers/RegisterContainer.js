@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
+import FooterComponent from "../components/Footer/FooterComponent";
+import HeaderComponent from "../components/Header/HeaderComponent";
 import RegisterComponent from "../components/Register/RegisterComponent";
 
 export default class RegisterContainer extends Component {
@@ -14,7 +16,6 @@ export default class RegisterContainer extends Component {
       address: "",
       phoneNumber: "",
       notificationRegister: "",
-      
     };
   }
 
@@ -95,17 +96,26 @@ export default class RegisterContainer extends Component {
   render() {
     console.log("check state", this.state);
     return (
-      <RegisterComponent
-        setE={(x) => this.setState({ email: x })}
-        setP={(x) => this.setState({ pass: x })}
-        setCP={(x) => this.setState({ confirmPass: x })}
-        setF={(x) => this.setState({ firstName: x })}
-        setL={(x) => this.setState({ lastName: x })}
-        setA={(x) => this.setState({ address: x })}
-        setPn={(x) => this.setState({ phoneNumber: x })}
-        notificationRegister={this.state.notificationRegister}
-        registerSubmit={this.registerSubmit}
-      />
+      <>
+      <HeaderComponent
+          isLogin={this.props.isLogin}
+          logout={() => this.props.usrActions.logout()}
+          history={this.props.history}
+        />
+
+        <RegisterComponent
+          setE={(x) => this.setState({ email: x })}
+          setP={(x) => this.setState({ pass: x })}
+          setCP={(x) => this.setState({ confirmPass: x })}
+          setF={(x) => this.setState({ firstName: x })}
+          setL={(x) => this.setState({ lastName: x })}
+          setA={(x) => this.setState({ address: x })}
+          setPn={(x) => this.setState({ phoneNumber: x })}
+          notificationRegister={this.state.notificationRegister}
+          registerSubmit={this.registerSubmit}
+        />
+        <FooterComponent />
+      </>
     );
   }
 }

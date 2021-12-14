@@ -48,16 +48,17 @@
           position: absolute;
           left: 3px;
           bottom: -2px;
-
         }
         // background-color:#203040;
       }
     }
 
     .header-user {
-     
       .rg {
         margin: 0 10px;
+      }
+      .rgi {
+        cursor: pointer;
       }
     }
     .header-logined {
@@ -65,12 +66,16 @@
         margin: 0 10px;
       }
     }
-    .r-l{
-      color:white;
-    }
-    span{
+    .r-l {
       color: white;
-      text-decoration: none;
+      cursor: pointer;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    span {
+     
     }
   }
 }

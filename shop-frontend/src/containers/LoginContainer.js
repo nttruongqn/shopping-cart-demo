@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import FooterComponent from "../components/Footer/FooterComponent";
+import HeaderComponent from "../components/Header/HeaderComponent";
 import LoginComponent from "../components/Login/LoginComponent";
 import * as userActions from "../store/actions/userActions";
 
@@ -63,12 +65,22 @@ export class LoginContainer extends Component {
     console.log("check props", this.props);
 
     return (
-      <LoginComponent
-        setEL={(x) => this.setState({ emailLogin: x })}
-        setPL={(x) => this.setState({ passLogin: x })}
-        loginSubmit={this.loginSubmit}
-        notificationLogin={this.state.notificationLogin}
-      />
+      <>
+        <HeaderComponent
+          isLogin={this.props.isLogin}
+          logout={() => this.props.usrActions.logout()}
+          history={this.props.history}
+         
+        />
+        <LoginComponent
+          setEL={(x) => this.setState({ emailLogin: x })}
+          setPL={(x) => this.setState({ passLogin: x })}
+          loginSubmit={this.loginSubmit}
+          notificationLogin={this.state.notificationLogin}
+        />
+        <FooterComponent />
+     
+      </>
     );
   }
 }

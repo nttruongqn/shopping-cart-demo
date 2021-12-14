@@ -34,15 +34,9 @@ const HeaderComponent = ({ isLogin, logout, history, uName, cartItems }) => {
           {!isLogin && (
             <div className="header-user">
               <div className="r-l">
-                <Link to={"/register"}>
-                  {" "}
-                  <span>Đăng kí</span>
-                </Link>
+                <span>  <Link to={"/login"}>Đăng nhập</Link></span>
                 <span className="rg">|</span>
-                <Link to={"/login"}>
-                  {" "}
-                  <span>Đăng nhập</span>
-                </Link>
+                <span>  <Link to={"/register"}>Đăng ký</Link></span>
               </div>
             </div>
           )}
@@ -52,7 +46,7 @@ const HeaderComponent = ({ isLogin, logout, history, uName, cartItems }) => {
                 <span>Chào {uName} </span>
 
                 <span className="rg">|</span>
-                <span
+                <span className="rgi"
                   onClick={() => {
                     window.location.reload();
                     logout();

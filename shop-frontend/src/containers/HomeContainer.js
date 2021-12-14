@@ -11,6 +11,7 @@ import HeaderComponent from "../components/Header/HeaderComponent";
 import HomeContent from "../components/Home/HomeContent";
 
 import axios from "axios";
+import FooterComponent from "../components/Footer/FooterComponent";
 
 export class HomeContainer extends Component {
   constructor(props) {
@@ -67,12 +68,14 @@ export class HomeContainer extends Component {
           deleteCart={(id_product)=>this.props.crtActions.deleteProductInCart(id_product)} 
 
           payment={( address, phone, name,total) => 
-          this.props.crtActions.payment( address, phone, name,total)}
+            this.props.crtActions.payment(address, phone, name, total)}
+            isLogin={this.props.isLogin}
 
           // openModal={this.openModal}
           // closeModal={this.closeModal}
           // product={this.state.product}
         />
+      <FooterComponent />
       </>
     );
   }

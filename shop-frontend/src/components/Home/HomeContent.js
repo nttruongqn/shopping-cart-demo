@@ -12,6 +12,7 @@ const HomeContent = ({
   cartItems,
   deleteCart,
   payment,
+  isLogin
 }) => {
   const [product, setProduct] = useState();
   const [openOrder, setOpenOrder] = useState(false);
@@ -100,18 +101,31 @@ const HomeContent = ({
                                       <b>{FormatCurrency(item.price)}</b>
                                     </span>
                                   </div>
-                                  <button
+
+                                  {isLogin ? (
+                                    <button
                                     className="payment-product"
+                                  
                                     onClick={() => {
+                                      
                                       item.count = 1;
                                       addToCart(item);
-
                                       <Link to="/"></Link>;
                                       window.location.reload();
                                     }}
                                   >
                                     Đặt hàng
                                   </button>
+                                  ) : (
+                                    <button
+                                    className="payment-product"
+                                    
+                                  ><Link to = {"/login"}> Đặt hàng</Link>
+                                   
+                                  </button>
+
+                                  )}
+                                  
                                 </div>
                               </div>
                             </div>
@@ -176,7 +190,8 @@ const HomeContent = ({
             <div className="grid-column-3-12">
               <div className="cart-container">
                 <h3>
-                  Bạn đã đặt {cartItems.length} sản phẩm
+                  {cartItems.length>0 ? `Bạn đã đặt ${cartItems.length} sản phẩm ` : "Bạn chưa đặt hàng hoặc chưa đăng nhập"}
+                 
                   {/* {console.log("check pops cart",cartItems)} */}
                 </h3>
                 <ul className="itemcart-list">
@@ -269,10 +284,10 @@ const HomeContent = ({
 
                       <div className="form-group">
                         <label htmlFor="address">Địa chỉ</label>
-                        <input
+                        <textarea
                           type="text"
                           className="form-control"
-                          value={infor.sucess}
+                          value={infor.address}
                           onChange={(e) =>
                             setInfor({ ...infor, address: e.target.value })
                           }
