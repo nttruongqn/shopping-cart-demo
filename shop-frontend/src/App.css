@@ -1,0 +1,41 @@
+.grid {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+
+}
+
+.grid-column-7-12 {
+  width: 70%;
+
+}
+
+.grid-column-3-12 {
+  width: 30%;
+  
+
+
+}
+
+.grid-column-4-7 {
+  width: 25%;
+  
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,76 @@
+.header {
+  background-color: #203040;
+  color: white;
+  padding: 10px 0;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-search {
+      background-color: white;
+      padding: 2px;
+      width: 500px;
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        padding: 10px;
+        border: none;
+        outline: none;
+      }
+      button {
+        outline: none;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+
+    .cart {
+      display: flex;
+      position: relative;
+      left: 40px;
+      .icon-cart {
+        font-size: 25px;
+        position: relative;
+        left: 70px;
+      }
+      .amount-cart {
+        width: 15px;
+        height: 15px;
+        border-radius: 4px;
+        background-color: #b21717;
+        position: absolute;
+        left: 90px;
+        span {
+          position: absolute;
+          left: 3px;
+          bottom: -2px;
+
+        }
+        // background-color:#203040;
+      }
+    }
+
+    .header-user {
+     
+      .rg {
+        margin: 0 10px;
+      }
+    }
+    .header-logined {
+      .rg {
+        margin: 0 10px;
+      }
+    }
+    .r-l{
+      color:white;
+    }
+    span{
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
